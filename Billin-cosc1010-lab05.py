@@ -1,8 +1,8 @@
-# Your Name Here
+# Kaden Billin
 # UWYO COSC 1010
-# Submission Date
+# 10-20-24
 # Lab 03 
-# Lab Section: 
+# Lab Section: 12
 # Sources, people worked with, help given to: 
 # your
 # comments
@@ -95,8 +95,17 @@ min_temps = [
 # The use of len() is fine
 # You can do this in two individual loops, or a single loop if you wish 
 
-print(f"Max temp = {max_temp}")
-print(f"Min temp = {min_temp}")
+max=max_temps[0]
+for temp in max_temps:
+    if temp > max:
+        max=temp
+print(f"Max temp = {max}")
+
+min=min_temps[0]
+for temp in min_temps:
+    if temp < min:
+        min=temp
+print(f"Min temp = {min}")
 
 # Given the below list 
 numbers = [-61, -76, 94, 21, 97, -4, 21, 56, -26, 9, 100, 56, -7, -32, 60, -68, -25, 3, -10, -83, 63, 0, 13, -99, 87, -46, -88, -71, 4, -99, -15, -12, 72, -1, -20, -90, 32, -36, -59, 83, 78, 52, 43, 55, 12, 16, -37, -5, -98, -53]
@@ -104,11 +113,37 @@ numbers = [-61, -76, 94, 21, 97, -4, 21, 56, -26, 9, 100, 56, -7, -32, 60, -68, 
 # You should print the number and the result within an f-string 
 # Example output: 83 is positive
 
-print(f'There are {pos_count} positive numbers')
-print(f'There are {neg_count} negative numbers')
-print(f"Zero occurred {zero_count} time(s)")
+pos=[]
+for num in numbers:
+    if num > 0:
+        pos.append(num)
+print(f"{len(pos)} is the amount of positive numbers")
+
+
+neg=[]
+for num in numbers:
+    if num < 0:
+        neg.append(num)
+print(f"{len(neg)} is the amount of negative numbers")
+
+zero=[]
+for num in numbers:
+    if num == 0:
+        zero.append(num)
+print(f"{len(zero)} is the amount of times that zero occurs")
+        
 # Given the same numbers list, give the sum of all positive numbers, and the sum of all negative numbers
 # This should be done within a single loop
 
-print(f"Sum of positive numbers {pos_sum}")
-print(f"Sum of negative numbers {neg_sum}")
+possum=[]
+negsum=[]
+for num in numbers:
+    if num > 0:
+        possum.append(num)
+
+    elif num < 0:
+        negsum.append(num)
+
+print(f"{sum(possum)} is the sum of all positive numbers")
+print(f"{sum(negsum)} is the sum of all negative numbers")
+
